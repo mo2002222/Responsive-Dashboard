@@ -1,0 +1,735 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+
+}
+:root{
+    --color-primary:#7380ec;
+    --color-success:#41f1b6;
+    --color-danger:#ff7782;
+    --color-warning:#ffbb55;
+    --color-white:#fff;
+    --color-info-dark:#7d8da1;
+    --color-info-light :#dce1eb;
+    --color-dark:#363949;
+    --color-light:rgb(132,139,200,0.18);
+    --color-primary-variant:#111e88;
+    --color-dark-variant:#6774B3;
+    --color-background:#f6f6f9;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+
+}
+html{
+    font-size: 15px;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    font-size: .88rem;
+    user-select: none;
+    background-color: var(--color-background);
+}
+.container{
+    img:first-child{
+        width: 3rem;
+        cursor: pointer;
+        transition: .3s;
+    }
+    img:not(:first-child){
+        width: 3rem;
+        transition: .3s;
+    border-radius: 50%;
+    }
+    img:hover{
+        transform: scale(1.1);
+    }
+    width: 94vw;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+}
+aside .setting{
+    display: none;
+}
+aside{
+    width: 17%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+    .logo{
+        display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: uppercase;
+    p{
+        font-weight: 800;
+        span{
+            color: var(--color-danger);
+        }
+    }
+}
+.mid-section{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    padding: 4rem 0 0;
+    ul{
+        li{
+            display: flex;
+            flex-direction: row;
+            padding: 1rem 0 1rem 1rem;
+            gap: 1.2rem;
+            color: var(--color-info-dark);
+            cursor: pointer;
+            margin-bottom: .7rem;
+            transition: .4s;
+        }
+        .active{
+            background-color: var(--color-info-light);
+            padding-left: 1rem;
+            position: relative;
+        }
+        .active::before{
+            content: '';
+            background-color: var(--color-primary);
+            width: .4rem;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+       }
+    }
+}
+.log-out{
+    padding-top: 6rem;
+    color: var(--color-info-dark);
+    gap: 1.2rem;
+    display: flex;
+    transition: 1s;
+}
+}
+
+main{
+    width: 60%;
+    .analytic{
+        display: flex;
+        gap: 3.4rem;
+    }
+    input{
+        background-color: var(--color-white);
+        padding: .3rem .9rem;
+    border-radius: .3rem;
+    margin: .3rem 0 1.4rem;
+    color: var(--color-dark);
+    }
+    .sales, .incom, .experince{
+        width: 19rem;
+        height: 13rem;
+        background: var(--color-white);
+        border-radius: .9rem;
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+        position: relative;
+        box-shadow: var(--box-shadow);
+        i{
+            font-size: 1.6rem;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: .4rem;
+            margin-bottom: 1.6rem;
+        }
+    }
+    .left-info{
+        margin-left: .9rem;
+        h4{
+            margin: 0 0 .7rem;
+        }
+        p{
+            margin-top: 1.6rem;
+            font-size: .8rem;
+            color: var(--color-dark);
+        }
+    }
+}
+
+
+.recent-orders{
+    padding-top: 2rem;
+    h2{
+        padding-bottom: 1rem;
+    }
+    .orders{
+    padding-bottom: 2rem;
+    background: var(--color-white);
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    table{
+        color: var(--color-dark);
+        .pending{
+            color: var(--color-warning);   
+        }
+        .refunded{
+            color: var(--color-danger);
+        }
+        .done{
+            color: var(--color-primary);
+        }
+        .faild{
+            color: var(--color-danger);
+        }
+        display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    thead{
+        padding: 0 .3rem 0;
+    }
+        th{
+            padding: 1.5rem 2.6rem .2rem 2rem;
+            text-align: center;
+        }
+        tbody{
+            tr{
+                text-align: start;
+            }
+            td{
+                padding: 1.5rem 2.6rem .2rem 3rem;
+            }
+            
+        }
+    }
+    }
+}
+//////
+section{
+    padding-left: 1rem;
+    .profile{
+        display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+    align-items: center;
+    padding-bottom:2rem;
+    }
+    .mood{
+    background: var(--color-info-light);
+    border-radius: .4rem;
+    cursor: pointer;
+    i:first-child{
+        color: var(--color-white);
+    }
+    i{
+        padding: .3rem .4rem;
+        font-size: .8rem;
+    }
+    }
+    .profile-info{
+        display: flex;
+    align-items: center;
+    gap: .3rem;
+    img{
+        cursor: pointer;
+    }
+    }
+}
+
+.recent-updates{
+    h1{
+        padding-bottom: 1rem;
+    }
+    .updates{
+        background-color: var(--color-white);
+        border-radius: 1rem;
+        font-size: .7rem;
+        box-shadow: var(--box-shadow);
+        .up{
+            display: flex;
+            padding: .5rem 1rem 0.4rem;
+            gap: .4rem;
+            
+            .right{
+                line-height: 1.2rem;
+                    color: var(--color-dark);
+            }
+            img{
+                height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+            }
+            h3{
+                flex: 1;
+        display: contents;
+            }
+        }
+    }
+}
+.analytic{
+    margin-top:2rem;
+}
+.saless{
+    margin-top: 2rem;
+    h1{
+        padding-bottom: 1rem;
+    }
+    .online, .offline, .new-customers{
+        background-color: var(--color-white);
+        margin-bottom: .8rem;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem .7rem;
+        font-size: .7rem;
+        box-shadow: var(--box-shadow);
+        .info{
+            display:flex;
+            gap: .7rem;
+            align-items: center;
+        }
+        i{
+            font-size: 1.2rem;
+    color: var(--color-white);
+    padding: .3rem;
+    border-radius: 50%;
+        }
+    }
+}
+.online .info i{
+    background-color: var(--color-primary);
+}
+.offline .info i{
+    background-color: var(--color-danger);
+}
+.new-customers .info i{
+    background-color: var(--color-success);
+}
+.add-prod{
+    padding: 1rem 1.8rem;
+    background: var(--color-info-light);
+    border-radius: 2rem;
+    border-style: dotted;
+    border-width: .3rem;
+    border-color: var(--color-primary);
+    margin-top: 3rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    .add{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    span{
+        font-size: x-large;
+    }
+    }
+}
+.on{
+    color: var(--color-success);
+}
+.off{
+    color: var(--color-danger);
+}
+.log-out{
+    margin-left: 1rem;
+    p, i{
+        cursor: pointer;
+    }
+}
+//
+.sales:hover{
+    box-shadow: none;
+}
+.incom:hover{
+    box-shadow: none;
+}
+.experince:hover{
+    box-shadow: none;
+}
+.incom:hover{
+    box-shadow: none;
+}
+.updates:hover{
+    box-shadow: none;
+}
+ .online:hover{box-shadow: none;
+}.add-prod:hover{
+    box-shadow: none;
+    background-color: var(--color-primary);
+}.offline:hover{
+    box-shadow: none;
+}.new-customers:hover{
+    box-shadow: none;
+}
+input{
+    cursor: pointer;
+}
+.mid-section ul li:hover{
+    transform: translatex(15px);
+}
+.logo img:hover{
+    transform: scale(1.2);
+}
+.log-out:hover{
+    transform: translatex(15px);
+}
+.profile-info img:hover{
+    transform: scale(1.1);
+}
+// .experince .right-info,.sales .right-info
+.right-info{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 8px solid #007bff;
+        background-color: transparent;
+        border-bottom-color: transparent;
+        transform: translateX(15px);
+        position: relative;
+        span{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--color-dark);
+        }
+}
+.experince .right-info{
+border-left-color:transparent ;
+}
+.incom .right-info{
+border-left-color:transparent ;
+border-right-color:transparent ;
+}
+.mood .active{
+        background-color: var(--color-primary);
+        border-radius: .4rem;
+    
+}
+.online, .info h3 ,.offline h2 , .new-customers h2 {
+    color: var(--color-dark);
+}
+.logo p{
+    color: var(--color-dark);
+}
+.date h1{
+    color: var(--color-dark);
+}
+.left-info h1 ,.left-info h4{
+    color: var(--color-dark);
+}
+.recent-orders h1{
+    color: var(--color-dark);
+}
+.recent-updates h1{
+    color: var(--color-dark);
+}
+.profile-info h3{
+    color: var(--color-dark);
+}
+.saless h1{
+    color: var(--color-dark);
+}
+.add{
+    color: var(--color-dark);
+}
+
+.dark-theme{
+    --color-background :#181a1e;
+    --color-white:#202528;
+    --color-dark:#edeffd;
+    --color-dark-variant:#a3bdcc;
+    --color-light:rgba(0, 0, 0, 0, 4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --color-info-light:#202528;
+}
+.setting{
+    cursor: pointer;
+}
+
+@media (max-width:600px){
+    .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 94vw;
+    margin-top: 0;
+    }aside{
+        display: none;
+    }main{
+        display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    }.date{
+        margin-left: 1rem;
+    margin-top: 6rem;
+    }.analytic{
+        display: flex;
+    flex-wrap: wrap;
+    margin-left: .8rem;
+    margin-top: 0;
+    gap: 1.3rem;
+    justify-content: center;
+    }.analytic .sales, .analytic .experince,.analytic .incom{
+        width: 100%;
+        justify-content: space-around;
+    }
+    .recent-orders h1{
+        text-align: center;
+    margin-bottom: 1rem;
+    }
+    .recent-orders{
+        margin-left: 1rem;
+    }
+    .orders{
+        padding-bottom: 1rem;
+        width: 100%;
+    }
+    .recent-orders .orders table thead  tH{
+        padding: 0.5rem 1rem 0.2rem 1.6rem;
+    }
+    .recent-orders .orders table tbody td{
+        padding: 1.5rem 1rem 0.2rem 1.6rem;
+    }
+    .orders th:nth-of-type(2){
+        display: none;
+    }
+    .orders th:last-child{
+        display: none;
+    }
+    
+    .orders tbody tr td:nth-of-type(2){
+        display: none;
+    }
+    .orders tbody tr td:last-child{
+        display: none;
+    }.recent-updates{
+        width: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.3rem;
+    }.updates{
+        width: 93%;
+        margin: 0 2rem 0 1.1rem;
+
+
+    }.saless{
+        margin-right: .9rem;
+        width: 93%;
+        margin-top: 2rem;
+        h1{
+            text-align: center;
+        }
+    }
+    .add-prod{
+        width: 84%;
+        .add{
+            gap: 1rem;
+        }
+    }
+    section .profile{
+        display: none;
+    }
+}
+.top-nav{
+    position: fixed;
+    border-bottom: .1rem solid var(--color-info-light);
+    z-index: 1; 
+    width: 100%;
+    display: flex;
+    background: var(--color-white);
+    justify-content: flex-end;
+    gap: .5rem;
+    align-items: center;
+    padding: .8rem;
+    #setting{
+        height: fit-content;
+    position: fixed;
+    left: 0;
+    font-size: 1.6rem;
+    margin-left: .8rem;
+    }
+    .mood{
+    background: var(--color-info-light);
+    border-radius: 0.4rem;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    i{
+        padding: 0.3rem 0.4rem;
+    font-size: .7rem;
+    }
+    }
+    img{
+        cursor: pointer;
+        width: 2.7rem;
+        border-radius: 50%;
+    }
+    .sales .analytic .right-info{
+        transform: translatex(7px);
+    }
+}
+@media (min-width:600px){
+    .date{
+        margin-left: .6rem;
+    }
+    .container{
+        margin-top: 0;
+        flex-direction: column;
+        margin: auto;
+    }
+    aside{
+        display: none;
+    }
+    main{
+        margin-top: 7rem;
+    }
+    main .analytic{
+        display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1.3rem;
+    margin-top: 1rem;
+    margin-left: .6rem;
+    .sales,.experince,.incom{
+        width: 32rem;
+        .right-info{
+            transform: translateX(200px);
+        }
+    }
+    }
+    .recent-orders{
+        width: 165%;
+    }
+    .orders table thead th {
+        padding: 1.5rem 1.6rem 0.2rem 3rem;
+    }
+    .orders table thead th:last-child {
+        display: none;
+    } 
+    .orders table tbody tr td:last-child {
+        display: none;
+    } 
+    section .profile{
+        display: none;
+    }
+    .recent-updates{
+        padding-top: 2rem;
+        .updates{
+            width: 90%;
+        }
+    }
+    .saless{
+        width: 90%;
+    }
+    .add-prod{
+        width: 90%;
+    }
+    .analytic .right-info{
+        transform: translateX(80px);
+    }
+    
+}
+@media (min-width:768px){
+    main .analytic{
+        grid-template-columns: auto auto  ;
+        column-gap: 3rem;
+        margin-left: 1.4rem;
+        .sales,.experince,.incom{
+            width: 22.5rem;
+            .right-info{
+            transform: translateX(135px);
+        }
+        }
+    }
+    .recent-orders{
+        width: 160%;
+        margin-left: 1.4rem;
+    }
+    .date{
+        margin-left: 1.4rem;
+    }
+    .recent-orders .orders table thead th{
+        padding: 1.5rem 2.6rem 0.2rem 3rem;
+    }
+}
+@media (min-width:992px){
+    .top-nav{
+        display: none;
+    }
+    aside{
+        display: block;
+    }
+    .container{
+        margin: auto;
+        margin-top: 1.3rem;
+        display: flex;
+        flex-direction: row;
+    }
+    main{
+        margin-top: 0;
+    }
+    main .analytic{
+        column-gap: 0rem;
+        .sales,.experince,.incom{
+            width: 17rem;
+            position: relative;
+            .right-info{
+                transform: translateX(55px);
+            }
+        }
+    }
+    .recent-orders{
+        width: 94%;
+    }
+    section {
+        .profile{
+            display: flex;
+            padding-bottom: 1rem;
+        }
+        .recent-updates{
+            padding-top: 0;
+            .updates{
+                width: 109%;
+            }
+
+        }
+        .saless{
+            width: 109%;
+        }
+        .add-prod{
+            width: 109%;
+        }
+    }
+}
+@media (min-width:1100px){
+    main .analytic{
+        display: flex;
+        gap:.7rem ;
+        .sales ,.experince,.incom{
+            .right-info{
+                transform: translateX(15px);
+            }
+            
+        }
+    }
+    section{
+        width: 23%;
+    }
+    .recent-orders{
+        width: 97%;
+    }
+    .saless{
+        margin-top: 3rem;
+    }
+}
+///////
+
+

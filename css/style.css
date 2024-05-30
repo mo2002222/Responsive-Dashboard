@@ -1,0 +1,764 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --color-primary:#7380ec;
+  --color-success:#41f1b6;
+  --color-danger:#ff7782;
+  --color-warning:#ffbb55;
+  --color-white:#fff;
+  --color-info-dark:#7d8da1;
+  --color-info-light:#dce1eb;
+  --color-dark:#363949;
+  --color-light:rgb(132,139,200,0.18);
+  --color-primary-variant:#111e88;
+  --color-dark-variant:#6774B3;
+  --color-background:#f6f6f9;
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  font-size: 0.88rem;
+  user-select: none;
+  background-color: var(--color-background);
+}
+
+.container {
+  width: 94vw;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+}
+.container img:first-child {
+  width: 3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.container img:not(:first-child) {
+  width: 3rem;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+.container img:hover {
+  transform: scale(1.1);
+}
+
+aside .setting {
+  display: none;
+}
+
+aside {
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+}
+aside .logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+}
+aside .logo p {
+  font-weight: 800;
+}
+aside .logo p span {
+  color: var(--color-danger);
+}
+aside .mid-section {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+  padding: 4rem 0 0;
+}
+aside .mid-section ul li {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 0 1rem 1rem;
+  gap: 1.2rem;
+  color: var(--color-info-dark);
+  cursor: pointer;
+  margin-bottom: 0.7rem;
+  transition: 0.4s;
+}
+aside .mid-section ul .active {
+  background-color: var(--color-info-light);
+  padding-left: 1rem;
+  position: relative;
+}
+aside .mid-section ul .active::before {
+  content: "";
+  background-color: var(--color-primary);
+  width: 0.4rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+aside .log-out {
+  padding-top: 6rem;
+  color: var(--color-info-dark);
+  gap: 1.2rem;
+  display: flex;
+  transition: 1s;
+}
+
+main {
+  width: 60%;
+}
+main .analytic {
+  display: flex;
+  gap: 3.4rem;
+}
+main input {
+  background-color: var(--color-white);
+  padding: 0.3rem 0.9rem;
+  border-radius: 0.3rem;
+  margin: 0.3rem 0 1.4rem;
+  color: var(--color-dark);
+}
+main .sales, main .incom, main .experince {
+  width: 19rem;
+  height: 13rem;
+  background: var(--color-white);
+  border-radius: 0.9rem;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  position: relative;
+  box-shadow: var(--box-shadow);
+}
+main .sales i, main .incom i, main .experince i {
+  font-size: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.4rem;
+  margin-bottom: 1.6rem;
+}
+main .left-info {
+  margin-left: 0.9rem;
+}
+main .left-info h4 {
+  margin: 0 0 0.7rem;
+}
+main .left-info p {
+  margin-top: 1.6rem;
+  font-size: 0.8rem;
+  color: var(--color-dark);
+}
+
+.recent-orders {
+  padding-top: 2rem;
+}
+.recent-orders h2 {
+  padding-bottom: 1rem;
+}
+.recent-orders .orders {
+  padding-bottom: 2rem;
+  background: var(--color-white);
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+}
+.recent-orders .orders table {
+  color: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+}
+.recent-orders .orders table .pending {
+  color: var(--color-warning);
+}
+.recent-orders .orders table .refunded {
+  color: var(--color-danger);
+}
+.recent-orders .orders table .done {
+  color: var(--color-primary);
+}
+.recent-orders .orders table .faild {
+  color: var(--color-danger);
+}
+.recent-orders .orders table thead {
+  padding: 0 0.3rem 0;
+}
+.recent-orders .orders table th {
+  padding: 1.5rem 2.6rem 0.2rem 2rem;
+  text-align: center;
+}
+.recent-orders .orders table tbody tr {
+  text-align: start;
+}
+.recent-orders .orders table tbody td {
+  padding: 1.5rem 2.6rem 0.2rem 3rem;
+}
+
+section {
+  padding-left: 1rem;
+}
+section .profile {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3rem;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+section .mood {
+  background: var(--color-info-light);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+section .mood i:first-child {
+  color: var(--color-white);
+}
+section .mood i {
+  padding: 0.3rem 0.4rem;
+  font-size: 0.8rem;
+}
+section .profile-info {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+section .profile-info img {
+  cursor: pointer;
+}
+
+.recent-updates h1 {
+  padding-bottom: 1rem;
+}
+.recent-updates .updates {
+  background-color: var(--color-white);
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  box-shadow: var(--box-shadow);
+}
+.recent-updates .updates .up {
+  display: flex;
+  padding: 0.5rem 1rem 0.4rem;
+  gap: 0.4rem;
+}
+.recent-updates .updates .up .right {
+  line-height: 1.2rem;
+  color: var(--color-dark);
+}
+.recent-updates .updates .up img {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+}
+.recent-updates .updates .up h3 {
+  flex: 1;
+  display: contents;
+}
+
+.analytic {
+  margin-top: 2rem;
+}
+
+.saless {
+  margin-top: 2rem;
+}
+.saless h1 {
+  padding-bottom: 1rem;
+}
+.saless .online, .saless .offline, .saless .new-customers {
+  background-color: var(--color-white);
+  margin-bottom: 0.8rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.7rem;
+  font-size: 0.7rem;
+  box-shadow: var(--box-shadow);
+}
+.saless .online .info, .saless .offline .info, .saless .new-customers .info {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+.saless .online i, .saless .offline i, .saless .new-customers i {
+  font-size: 1.2rem;
+  color: var(--color-white);
+  padding: 0.3rem;
+  border-radius: 50%;
+}
+
+.online .info i {
+  background-color: var(--color-primary);
+}
+
+.offline .info i {
+  background-color: var(--color-danger);
+}
+
+.new-customers .info i {
+  background-color: var(--color-success);
+}
+
+.add-prod {
+  padding: 1rem 1.8rem;
+  background: var(--color-info-light);
+  border-radius: 2rem;
+  border-style: dotted;
+  border-width: 0.3rem;
+  border-color: var(--color-primary);
+  margin-top: 3rem;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+.add-prod .add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.add-prod .add span {
+  font-size: x-large;
+}
+
+.on {
+  color: var(--color-success);
+}
+
+.off {
+  color: var(--color-danger);
+}
+
+.log-out {
+  margin-left: 1rem;
+}
+.log-out p, .log-out i {
+  cursor: pointer;
+}
+
+.sales:hover {
+  box-shadow: none;
+}
+
+.incom:hover {
+  box-shadow: none;
+}
+
+.experince:hover {
+  box-shadow: none;
+}
+
+.incom:hover {
+  box-shadow: none;
+}
+
+.updates:hover {
+  box-shadow: none;
+}
+
+.online:hover {
+  box-shadow: none;
+}
+
+.add-prod:hover {
+  box-shadow: none;
+  background-color: var(--color-primary);
+}
+
+.offline:hover {
+  box-shadow: none;
+}
+
+.new-customers:hover {
+  box-shadow: none;
+}
+
+input {
+  cursor: pointer;
+}
+
+.mid-section ul li:hover {
+  transform: translatex(15px);
+}
+
+.logo img:hover {
+  transform: scale(1.2);
+}
+
+.log-out:hover {
+  transform: translatex(15px);
+}
+
+.profile-info img:hover {
+  transform: scale(1.1);
+}
+
+.right-info {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 8px solid #007bff;
+  background-color: transparent;
+  border-bottom-color: transparent;
+  transform: translateX(15px);
+  position: relative;
+}
+.right-info span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-dark);
+}
+
+.experince .right-info {
+  border-left-color: transparent;
+}
+
+.incom .right-info {
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.mood .active {
+  background-color: var(--color-primary);
+  border-radius: 0.4rem;
+}
+
+.online, .info h3, .offline h2, .new-customers h2 {
+  color: var(--color-dark);
+}
+
+.logo p {
+  color: var(--color-dark);
+}
+
+.date h1 {
+  color: var(--color-dark);
+}
+
+.left-info h1, .left-info h4 {
+  color: var(--color-dark);
+}
+
+.recent-orders h1 {
+  color: var(--color-dark);
+}
+
+.recent-updates h1 {
+  color: var(--color-dark);
+}
+
+.profile-info h3 {
+  color: var(--color-dark);
+}
+
+.saless h1 {
+  color: var(--color-dark);
+}
+
+.add {
+  color: var(--color-dark);
+}
+
+.dark-theme {
+  --color-background:#181a1e;
+  --color-white:#202528;
+  --color-dark:#edeffd;
+  --color-dark-variant:#a3bdcc;
+  --color-light:rgba(0, 0, 0, 0, 4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+  --color-info-light:#202528;
+}
+
+.setting {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 94vw;
+    margin-top: 0;
+  }
+  aside {
+    display: none;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+  }
+  .date {
+    margin-left: 1rem;
+    margin-top: 6rem;
+  }
+  .analytic {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0.8rem;
+    margin-top: 0;
+    gap: 1.3rem;
+    justify-content: center;
+  }
+  .analytic .sales, .analytic .experince, .analytic .incom {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .recent-orders h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .recent-orders {
+    margin-left: 1rem;
+  }
+  .orders {
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+  .recent-orders .orders table thead tH {
+    padding: 0.5rem 1rem 0.2rem 1.6rem;
+  }
+  .recent-orders .orders table tbody td {
+    padding: 1.5rem 1rem 0.2rem 1.6rem;
+  }
+  .orders th:nth-of-type(2) {
+    display: none;
+  }
+  .orders th:last-child {
+    display: none;
+  }
+  .orders tbody tr td:nth-of-type(2) {
+    display: none;
+  }
+  .orders tbody tr td:last-child {
+    display: none;
+  }
+  .recent-updates {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.3rem;
+  }
+  .updates {
+    width: 93%;
+    margin: 0 2rem 0 1.1rem;
+  }
+  .saless {
+    margin-right: 0.9rem;
+    width: 93%;
+    margin-top: 2rem;
+  }
+  .saless h1 {
+    text-align: center;
+  }
+  .add-prod {
+    width: 84%;
+  }
+  .add-prod .add {
+    gap: 1rem;
+  }
+  section .profile {
+    display: none;
+  }
+}
+.top-nav {
+  position: fixed;
+  border-bottom: 0.1rem solid var(--color-info-light);
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  background: var(--color-white);
+  justify-content: flex-end;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.8rem;
+}
+.top-nav #setting {
+  height: fit-content;
+  position: fixed;
+  left: 0;
+  font-size: 1.6rem;
+  margin-left: 0.8rem;
+}
+.top-nav .mood {
+  background: var(--color-info-light);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+}
+.top-nav .mood i {
+  padding: 0.3rem 0.4rem;
+  font-size: 0.7rem;
+}
+.top-nav img {
+  cursor: pointer;
+  width: 2.7rem;
+  border-radius: 50%;
+}
+.top-nav .sales .analytic .right-info {
+  transform: translatex(7px);
+}
+
+@media (min-width: 600px) {
+  .date {
+    margin-left: 0.6rem;
+  }
+  .container {
+    margin-top: 0;
+    flex-direction: column;
+    margin: auto;
+  }
+  aside {
+    display: none;
+  }
+  main {
+    margin-top: 7rem;
+  }
+  main .analytic {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1.3rem;
+    margin-top: 1rem;
+    margin-left: 0.6rem;
+  }
+  main .analytic .sales, main .analytic .experince, main .analytic .incom {
+    width: 32rem;
+  }
+  main .analytic .sales .right-info, main .analytic .experince .right-info, main .analytic .incom .right-info {
+    transform: translateX(200px);
+  }
+  .recent-orders {
+    width: 165%;
+  }
+  .orders table thead th {
+    padding: 1.5rem 1.6rem 0.2rem 3rem;
+  }
+  .orders table thead th:last-child {
+    display: none;
+  }
+  .orders table tbody tr td:last-child {
+    display: none;
+  }
+  section .profile {
+    display: none;
+  }
+  .recent-updates {
+    padding-top: 2rem;
+  }
+  .recent-updates .updates {
+    width: 90%;
+  }
+  .saless {
+    width: 90%;
+  }
+  .add-prod {
+    width: 90%;
+  }
+  .analytic .right-info {
+    transform: translateX(80px);
+  }
+}
+@media (min-width: 768px) {
+  main .analytic {
+    grid-template-columns: auto auto;
+    column-gap: 3rem;
+    margin-left: 1.4rem;
+  }
+  main .analytic .sales, main .analytic .experince, main .analytic .incom {
+    width: 22.5rem;
+  }
+  main .analytic .sales .right-info, main .analytic .experince .right-info, main .analytic .incom .right-info {
+    transform: translateX(135px);
+  }
+  .recent-orders {
+    width: 160%;
+    margin-left: 1.4rem;
+  }
+  .date {
+    margin-left: 1.4rem;
+  }
+  .recent-orders .orders table thead th {
+    padding: 1.5rem 2.6rem 0.2rem 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .top-nav {
+    display: none;
+  }
+  aside {
+    display: block;
+  }
+  .container {
+    margin: auto;
+    margin-top: 1.3rem;
+    display: flex;
+    flex-direction: row;
+  }
+  main {
+    margin-top: 0;
+  }
+  main .analytic {
+    column-gap: 0rem;
+  }
+  main .analytic .sales, main .analytic .experince, main .analytic .incom {
+    width: 17rem;
+    position: relative;
+  }
+  main .analytic .sales .right-info, main .analytic .experince .right-info, main .analytic .incom .right-info {
+    transform: translateX(55px);
+  }
+  .recent-orders {
+    width: 94%;
+  }
+  section .profile {
+    display: flex;
+    padding-bottom: 1rem;
+  }
+  section .recent-updates {
+    padding-top: 0;
+  }
+  section .recent-updates .updates {
+    width: 109%;
+  }
+  section .saless {
+    width: 109%;
+  }
+  section .add-prod {
+    width: 109%;
+  }
+}
+@media (min-width: 1100px) {
+  main .analytic {
+    display: flex;
+    gap: 0.7rem;
+  }
+  main .analytic .sales .right-info, main .analytic .experince .right-info, main .analytic .incom .right-info {
+    transform: translateX(15px);
+  }
+  section {
+    width: 23%;
+  }
+  .recent-orders {
+    width: 97%;
+  }
+  .saless {
+    margin-top: 3rem;
+  }
+}/*# sourceMappingURL=style.css.map */
